@@ -49,8 +49,10 @@
   .navbar a {
     color: #fff;
     text-decoration: none;
-    font-size: 1em;
     transition: color 0.3s;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
   }
 
   .navbar a:hover {
@@ -186,7 +188,7 @@
     text-align:center;
   }
   .phone__back-image{
-    background-image: url('Cover Image.png');
+    background-image: url('../images/Cover Image.png');
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -198,6 +200,10 @@
   .slidesection{
     padding-top:250px;
     padding-bottom:250px;
+  }
+  .slick-slide img{
+    display: block;
+    max-width: 350px;
   }
   .slider-heading{
     font-size: 48px;
@@ -212,6 +218,16 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 80px;
+  }
+  .nav-arrows{
+    padding-top: 35px;
+  }
+  .slick-slider .slick-track{
+    display: flex;
+     gap: 30px;
+  }
+  .primary__btn {
+    margin-top: 20px;
   }
   .primary__btn a{
     text-decoration: none;
@@ -637,7 +653,6 @@ h1 {
   display: flex;
   gap: 20px;
 }
-
 .footer-links li a {
   font-size: 16px;
   font-weight: 600;
@@ -645,21 +660,17 @@ h1 {
   text-decoration: none;
   color: #6E757C;
 }
-
 .footer-links li a:hover {
   color: #fff;
 }
-
 .social-brand{
   display: flex;
   gap: 24px;
 }
-
 .social-icons img {
   width: 20px;
   height: 20px;
 }
-
 .footer-bottom {
   text-align: center;
   color:#BAC3CA;
@@ -673,11 +684,9 @@ h1 {
 .accordion {
   border: none;
 }
-
 .accordion-item {
   margin-bottom: 10px;
 }
-
 .accordion-header {
   width: 100%;
   background-color: transparent;
@@ -692,7 +701,6 @@ h1 {
   font-weight: 600;
   line-height: 24px;
   }
-
 .accordion-header:hover {
   background-color: #333333;
 }
@@ -715,18 +723,111 @@ h1 {
   line-height: 24px;
   max-width: 957px;
 }
-
 .accordion-header.active {
   background-color: #333333;
 }
-
 .accordion-content.show {
-  max-height: 150px; /* Adjust this based on your content */
+  max-height: 150px;      
 }
 .accordion-item {
   display: none; /* Hide all accordion items by default */
 }
-
 .accordion-item.active {
   display: block; /* Show only the active accordion item */
+}
+@media (max-width: 1024px) {
+  /* Main Container */
+  .container {
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+
+  /* Navbar Styling */
+  .navbar {
+    padding: 1em 1.5em;
+  }
+
+  .navbar .logo {
+    font-size: 1.2em;
+  }
+
+  .navbar ul {
+    gap: 1em;
+  }
+
+  .navbar a {
+    font-size: 12px;
+  }
+
+  /* Hero Section */
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .primary-button {
+    padding: 12px 20px;
+  }
+
+  /* Sidebar Info Section */
+  .info-panel {
+    width: 100%;
+    padding: 1em;
+  }
+
+  /* Feature Section */
+  .feature {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  .feature-heading {
+    font-size: 44px;
+  }
+
+  .feature-parag {
+    font-size: 14px;
+  }
+  .download-opt__head{
+    font-size: 15px;
+  }
+  .slider-heading{
+    font-size: 38px;
+  }
+  .primary__btn a{
+    padding: 11px 20px;
+  }
+  .slick-slide img{
+    max-width: 297px;
+  }
+  /* Phone Section */
+  .phone-right {
+    left: 260px;
+  }
+.text-content h1{
+  font-size: 36px;
+  padding-bottom: 10px;
+}
+.text-content h5{
+  font-size: 16px;
+}
+/* Stat Section */
+.stat__head{
+font-size: 36px;
+}
+.stat-box h4{
+  font-size: 15px;
+}
+/* Review Section */
+.review-heading{
+  padding-bottom: 70px;
+  font-size: 34px;
+}
+.review-card p{
+  font-size: 13px;
+  font-weight: 300;
+}
 }
