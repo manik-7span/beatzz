@@ -47,41 +47,41 @@ $(document).ready(function(){
     });
 });
 
-        document.querySelectorAll(".accordion-header").forEach((button) => {
-  button.addEventListener("click", () => {
-    const content = button.nextElementSibling;
+document.querySelectorAll('.accordion-header').forEach((header) => {
+  header.addEventListener('click', () => {
+    const content = header.nextElementSibling;
 
-    // Toggle active state for clicked header
-    button.classList.toggle("active");
-
-    // Toggle content visibility
-    if (content.classList.contains("show")) {
-      content.classList.remove("show");
-      content.style.maxHeight = null;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null; // Collapse
     } else {
-      content.classList.add("show");
-      content.style.maxHeight = content.scrollHeight + "px";
+      // Close other accordions
+      document.querySelectorAll('.accordion-content').forEach((item) => {
+        item.style.maxHeight = null;
+      });
+      content.style.maxHeight = content.scrollHeight + 'px'; // Expand
     }
   });
 });
-const tabButtons = document.querySelectorAll('.tab-btn');
-const accordionItems = document.querySelectorAll('.accordion-item');
 
-tabButtons.forEach(button => {
+const tabButtons = document.querySelectorAll('.tab-btn');
+
+tabButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    // Remove active class from all buttons and accordion items
-    tabButtons.forEach(btn => btn.classList.remove('active'));
-    accordionItems.forEach(item => item.classList.remove('active'));
+    // Remove active class from all buttons
+    tabButtons.forEach((btn) => btn.classList.remove('active'));
 
     // Add active class to clicked button
     button.classList.add('active');
 
-    // Show the corresponding accordion items
+    // Show only the corresponding accordion items
     const tabId = button.getAttribute('data-tab');
-    document.querySelectorAll(`.accordion-item`).forEach(item => {
-      if (item.id === tabId) {
-        item.classList.add('active');
+    document.querySelectorAll('.accordion-item').forEach((item) => {
+      if (item.getAttribute('data-tab') === tabId) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
       }
     });
   });
 });
+
