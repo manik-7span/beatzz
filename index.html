@@ -21,12 +21,15 @@
               <div class="logo">
                <img src="images/logo.svg" alt="beatz logo">
               </div>
-              <ul>
+              <ul class="navbar-points"  id="navbar-points">
                 <li><a href="#">About</a></li>
                 <li><a href="#">Events</a></li>
                 <li><a href="#">Tickets</a></li>
                 <li><a href="#">For clubs</a></li>
               </ul>
+              <div class="burger-icon" onclick="toggleMenu()">
+                &#9776; <!-- This is the burger icon -->
+            </div>
             </nav>
             <div class="hero__details">
             <div class="hero__info">
@@ -130,8 +133,7 @@
         <div class="tickets-section">
           <div class="ticket__right">
           <div class="phone-images">
-            <img src="images/ticket mobile.png" alt="Your tickets" class="phone-left">
-            <img src="images/festival mobile.png" alt="Roskilde Festival" class="phone-right">
+            <img src="images/mobile ticket.png" alt="Your tickets" class="phone image">
           </div>
         </div>
           <div class="ticket__left">
@@ -265,6 +267,9 @@
   <section class="accordion-section">
     <div class="accordion">
       <div class="container">
+        <div class="accordion__heading">
+          <h2 class="accordion-head">Frequently asked questions</h2>
+        </div>
         <div class="tabs">
           <button class="tab-btn active" data-tab="general">General</button>
           <button class="tab-btn" data-tab="using-app">Using App</button>
@@ -377,7 +382,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> 
     </main> 
     <footer class="footer">
       <div class="container">

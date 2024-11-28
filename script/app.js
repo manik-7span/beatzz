@@ -8,7 +8,16 @@ $(document).ready(function(){
     arrows:false,
     autoplay: false,
     autoplaySpeed: 3000,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    responsive: [
+      {
+          breakpoint: 480, 
+          settings: {
+              slidesToShow: 1, 
+              centerMode: false, 
+          },
+      },
+  ],
   });
 
 
@@ -22,21 +31,29 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function(){
-    // Initialize Slick for the review slider
-    $('.review-slide').slick({
-        dots: true,
-        infinite: true,
-        centerMode: true,
-        speed: 500,
-        slidesToShow: 3, // Show one review at a time
-        slidesToScroll: 1,
-        arrows: false, // Disable default arrows
-        autoplay: false,
-        autoplaySpeed: 3000,
-        adaptiveHeight: true
-    });
-
+$(document).ready(function () {
+  // Initialize Slick for the review slider
+  $('.review-slide').slick({
+      dots: true,
+      infinite: true,
+      centerMode: true,
+      speed: 500,
+      slidesToShow: 3, 
+      slidesToScroll: 1,
+      arrows: false, 
+      autoplay: false,
+      autoplaySpeed: 3000,
+      adaptiveHeight: true,
+      responsive: [
+          {
+              breakpoint: 480, 
+              settings: {
+                  slidesToShow: 1, 
+                  centerMode: false, 
+              },
+          },
+      ],
+  });
     // Custom navigation
     $('.left-arrow').on('click', function() {
         $('.review-slide').slick('slickPrev');
@@ -84,4 +101,8 @@ tabButtons.forEach((button) => {
     });
   });
 });
+function toggleMenu() {
+  const navbarPoints = document.getElementById('navbar-points');
+  navbarPoints.classList.toggle('show');
+}
 
