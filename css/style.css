@@ -718,7 +718,7 @@ h1 {
   width: 100%;
   background-color: transparent;
   border: none;
-  color: #ffffff;
+  color: #6E757C;
   text-align: left;
   padding: 40px;
   font-size: 16px;
@@ -730,6 +730,7 @@ h1 {
   }
 .accordion-header:hover {
   background-color: #333333;
+  color: white;
 }
 .tabs{
   padding-bottom: 80px;
@@ -741,12 +742,13 @@ h1 {
   text-align: center;
   padding-bottom: 32px;
  }
+ .accordion_full{
+  display: flex;
+ }
 .accordion-content {
   background-color: #1c1c1c;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
   padding: 0px 37px;
+  display: none;
 }
 .accordion-content p {
   padding: 15px 0;
@@ -756,9 +758,6 @@ h1 {
   font-weight: 500;
   line-height: 24px;
   max-width: 957px;
-}
-.accordion-header.active {
-  background-color: #333333;
 }
 .accordion-content.show {
   max-height: 150px;      
@@ -776,6 +775,11 @@ h1 {
 .accordion-item.active {
   display: block;
 }
+
+.accordion-header.active + .accordion-content {
+  display: block; /* Show content when header is active */
+}
+
 
 @media (max-width: 1024px) {
     /* Navbar Styling */

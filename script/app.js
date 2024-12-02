@@ -64,21 +64,6 @@ $(document).ready(function () {
     });
 });
 
-document.querySelectorAll('.accordion-header').forEach((header) => {
-  header.addEventListener('click', () => {
-    const content = header.nextElementSibling;
-
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null; // Collapse
-    } else {
-      // Close other accordions
-      document.querySelectorAll('.accordion-content').forEach((item) => {
-        item.style.maxHeight = null;
-      });
-      content.style.maxHeight = content.scrollHeight + 'px'; // Expand
-    }
-  });
-});
 
 const tabButtons = document.querySelectorAll('.tab-btn');
 
@@ -105,4 +90,33 @@ function toggleMenu() {
   const navbarPoints = document.getElementById('navbar-points');
   navbarPoints.classList.toggle('show');
 }
+$(document).ready(function() {
+  // When a tab button is clicked
+  $('.tab-btn').click(function() {
+      var tabId = $(this).data('tab');
+      
+      // Hide all accordion items and remove active class from all tab buttons
+      $('.accordion-item').removeClass('active');
+      $('.tab-btn').removeClass('active');
+      
+      // Show the selected accordion item and add active class to the clicked tab button
+      $('#' + tabId).addClass('active');
+      $(this).addClass('active');
+  });
 
+  // When an accordion header is clicked
+  $('.accordion-header').click(function() {
+      $(this).next('.accordion-content').slideToggle();
+      $(this).toggleClass('active');
+  });
+});
+$(document).ready(function() {
+  // When an accordion header is clicked
+  $('.accordion_full').click(function() {
+      // Toggle the active class on the clicked header
+      $(this).toggleClass('active');
+      
+      // Slide toggle the corresponding accordion content
+      $(this).next('.accordion-content').slideToggle();
+  });
+});
